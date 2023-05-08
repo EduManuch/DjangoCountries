@@ -2,7 +2,7 @@ from django.db import models
 
 
 # Create your models here.
-class Languages(models.Model):
+class Language(models.Model):
     name = models.CharField(max_length=50)
 
 

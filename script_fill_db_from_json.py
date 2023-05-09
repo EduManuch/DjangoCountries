@@ -1,4 +1,9 @@
+import os
 import json
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "DjangoCountries.settings")
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
 from MainApp.models import Country, Language
 
 with open("countries.json", 'r') as f:

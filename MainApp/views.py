@@ -22,11 +22,11 @@ def languages_list(request):
 
 
 def country_page(request, country):
-    #                    'languages': item['languages']}
-
     try:
         item = Country.objects.get(name=country)
-        context = {'country': item.name}
+        languages = item.languages.all()
+        context = {'country': item.name,
+                   'languages': languages}
         return render(request, 'country-page.html', context)
     except ObjectDoesNotExist:
         return HttpResponseNotFound(f"Страна {country} не найдена")

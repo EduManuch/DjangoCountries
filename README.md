@@ -1,24 +1,3 @@
-### Информацию о запуске проекта после клонирования
-- Для клонирования проекта в локальный репозиторий использовать команду:
-  git clone git@github.com:EduManuch/DjangoCountries.git
-- После клонирвоания создать виртуальное окружение python3 -m venv venv_name
-- Активировать виртуальное окружение командой source venv_name/bin/activate
-- Установить ибилиотеки Django и django-extensions командами:
-  pip install django
-  pip install django-extensions
-- Создаём путём выполнения миграции: python manage.py migrate
-- Заполняем БД из фикстуры countries.json: python manage.py loaddata countries.json
-- Запускаем проект командой: python manage.py runserver
-- Все изменения отправляем в удаленный репозиторий командой:
-  git push origin/head
-  Предварительно проверив изменения в репозитории командой:
-  git fetch
-  При наличии изменений провессти объединение веток командой:
-  git merge origin/head
-  Или забрать изменения и объединить одной командой:
-  put pull
-
-
 ### Часть-1
 - [x] Сгенерирована заготовка django-проекта
 - [x] Добавлено приложение(App)
@@ -46,4 +25,16 @@
 - [x] Добавьте в проект файл README.md, добавив в него:
   - [x] Информацию о запуске проекта после клонирования
   - [x] Список всех заданий, пометив выполненные
+
+
+### Инструкция по запуску проекта после клонирования
+1. Клонируем проект: git clone <git-hub-url>
+2. Создаем venv: python3 -m venv <venv_name> где venv_name название виртуального окружения
+3. Активируем venv: source venv_name/bin/activate
+4. Устанавливаем зависимости: pip install -r requirements.txt
+5. Создаем базу(применяя миграции): python manage.py migrate
+6. Запускаем проект командой: python manage.py runserver
+### Вспомогательные команды
+1. Заполнение БД из fixture: python manage.py loaddata countries.json
+2. Запуск python-shell с контекстом django: python manage.py shell_plus --ipython
 

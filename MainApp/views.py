@@ -31,3 +31,14 @@ def country_page(request, country):
     except ObjectDoesNotExist:
         return HttpResponseNotFound(f"Страна {country} не найдена")
 
+
+def language_page(request, language):
+    try:
+        item = Language.objects.get(name=language)
+        countries = item.country_set.all()
+        context = {
+            'language': item.name,
+            'countries': countries}
+        return render(request, 'language-page.html', context)
+    except ObjectDoesNotExist:
+        return HttpResponseNotFound(f"Язык {language} не найден")

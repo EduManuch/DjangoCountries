@@ -8,7 +8,7 @@
 <h2>Список языков</h2>
     <ol>
         {% for language in languages %}
-        <li>{{language.name}}</li>
+        <li><a href="{% url 'language-detail' language.name %}">{{ language.name }}</a></li>
         {% endfor %}
     </ol>
 </body>

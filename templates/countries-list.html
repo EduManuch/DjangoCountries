@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
 <h2>Список стран</h2>
-    <ol>
-        {% for country in  countries %}
-        <li><a href="{% url 'country-detail' country.name %}">{{ country.name }}</a></li>
-        {% endfor %}
-    </ol>
-</body>
-</html>
+<ol>
+    {% for country in  countries %}
+    <li><a href="{% url 'country-detail' country.name %}">{{ country.name }}</a></li>
+    {% endfor %}
+</ol>
+{% endblock %}

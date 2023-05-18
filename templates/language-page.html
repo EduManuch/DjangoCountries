@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
 <h2>Язык: </h2>
 <h3>Страны:</h3>
 <ul>
@@ -12,5 +7,4 @@
     <li> {{ country.name }} </li>
     {% endfor %}
 </ul>
-</body>
-</html>
+{% endblock %}

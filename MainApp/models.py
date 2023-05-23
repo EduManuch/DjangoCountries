@@ -20,4 +20,4 @@ class Country(models.Model):
         return f"Country <{self.name}>"
 
     def __str__(self):
-        return f"Country <{self.name}>"
+        return f"{self.name}"

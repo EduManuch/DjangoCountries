@@ -11,8 +11,17 @@
 </h1>
 <h2>Список стран</h2>
 <ol>
-    {% for country in  countries %}
-    <li><a href="{% url 'country-detail' country.name %}">{{ country.name }}</a></li>
+    {% for country in page_obj %}
+    <li><a href="{% url 'country-detail' country %}">{{ country }}</a></li>
     {% endfor %}
 </ol>
+<nav>
+    <ul>
+        {% for p in page_obj.paginator.page_range %}
+        <li style="display: inline;">
+            <a href="?page={{ p }}">{{ p }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
 {% endblock %}

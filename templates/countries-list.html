@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
+<h1>
+    <ul>
+        {% for letter in alphabet %}
+        <li style="display: inline;">
+            <a href="{% url 'countries-list' letter %}">{{ letter }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</h1>
 <h2>Список стран</h2>
 <ol>
     {% for country in  countries %}

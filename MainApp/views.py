@@ -9,9 +9,15 @@ def home(request):
     return render(request, 'index.html', context)
 
 
-def countries_list(request):
-    countries = Country.objects.all()
-    context = {'countries': countries}
+def countries_list(request, letter):
+    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    if letter == 'all':
+        countries = Country.objects.all()
+    elif len(letter) == 1 and type(letter) == str:
+        countries = Country.objects.filter(name__startswith=letter)
+    context = {'countries': countries,
+               'alphabet': alphabet
+               }
     return render(request, 'countries-list.html', context)
 
 

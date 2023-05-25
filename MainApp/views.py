@@ -14,6 +14,7 @@ def countries_list(request, letter):
     alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     if letter == 'all':
         countries = Country.objects.all()
+    # FIXME: а если это условие не выполняется, тогда что?
     elif len(letter) == 1 and type(letter) == str:
         countries = Country.objects.filter(name__startswith=letter)
 
@@ -34,6 +35,7 @@ def languages_list(request):
 
 def country_page(request, country):
     try:
+        # FIXME: а почему переменная называется "item", если в ней страна?
         item = Country.objects.get(name=country)
         languages = item.languages.all()
         context = {'country': item.name,
